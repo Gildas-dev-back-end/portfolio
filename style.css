@@ -20,6 +20,13 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  #apropos p {
+    text-align: left;
+  }
+}
+
+
 /* === Navigation === */
 header {
   background: rgba(34, 34, 34, 0.95);

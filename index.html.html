@@ -22,9 +22,8 @@
     <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
     <ul class="nav-links">
       <li><a href="#accueil" class="active">Accueil</a></li>
-      <li><a href="#competences">Competences</a></li>
-      <li><a href="#projets">Projets</a></li>
       <li><a href="#apropos">À propos</a></li>
+      <li><a href="#projets">Projets</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -55,6 +54,10 @@
         <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
       </div>
       <div class="skill">
+        <p>Python <span>30%</span></p>
+        <div class="skill-bar"><div class="skill-fill" style="width: 30%;"></div></div>
+      </div>
+      <div class="skill">
         <p>jQuery <span>85%</span></p>
         <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
       </div>
@@ -74,6 +77,10 @@
       <div class="skill">
         <p>React-Native <span>60%</span></p>
         <div class="skill-bar"><div class="skill-fill" style="width: 60%;"></div></div>
+      </div>
+      <div class="skill">
+        <p>Django <span>65%</span></p>
+        <div class="skill-bar"><div class="skill-fill" style="width: 65%;"></div></div>
       </div>
     </div>
 
@@ -155,8 +162,8 @@
      en mettant l’accent sur la performance, la fiabilité et l’évolutivité. Mon objectif est de développer des solutions 
      qui répondent aux besoins métier tout en garantissant une expérience fluide côté utilisateur.</p>
 <p>Je maîtrise la technologie du developpement mobile tel que <strong>React-Native</strong> et les technologies fondamentales du <strong>Back-End</strong> telles que 
-     <strong>PHP</strong> et <strong>JavaScript</strong>, ainsi que des frameworks modernes comme 
-     <strong>Laravel,</strong><strong>CodeIgniter,</strong><strong>JQUERY</strong>. ce qui me permet de concevoir 
+     <strong>PHP</strong>, <strong>JavaScript</strong> et <strong>Python</strong>, ainsi que des frameworks modernes comme 
+     <strong>Laravel</strong>,<strong>CodeIgniter</strong>,<strong>JQUERY</strong> et <strong>Django</strong>. ce qui me permet de concevoir 
      des applications dynamiques et performantes.  
      Côté bases de données, je travaille aussi bien avec des solutions relationnelles comme 
      <strong>MySQL</strong> qu’avec des systèmes NoSQL comme <strong>MongoDB</strong>.  
@@ -328,12 +335,6 @@
 .skills-group {
   flex: 1 1 250px; /* flexible et responsive */
 }
-  @media (max-width: 768px) {
-  #apropos p {
-    text-align: left;
-  }
-}
-
 
 .skills-group h3 {
   margin-bottom: 1rem;
@@ -401,6 +402,13 @@
   color: #328cf3;
   cursor: default;
 }
+
+@media (max-width: 768px) {
+  #apropos p {
+    text-align: left;
+  }
+}
+
 </style>
 
 <script>
@@ -438,5 +446,6 @@
     });
   });
 });
+
 
 </script>

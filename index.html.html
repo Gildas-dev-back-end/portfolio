@@ -6,6 +6,11 @@
   <title>Mon Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
   <header>
@@ -148,9 +153,9 @@
   <p>Passionné par le développement web et l’architecture logicielle, je conçois des applications robustes et sécurisées, 
      en mettant l’accent sur la performance, la fiabilité et l’évolutivité. Mon objectif est de développer des solutions 
      qui répondent aux besoins métier tout en garantissant une expérience fluide côté utilisateur.</p>
-<p>Je maîtrise la technologie du developpement mobile tel que <strong>React</strong> et les technologies fondamentales du <strong>Back-End</strong> telles que 
-     <strong>PHP</strong> et <strong>JavaScript</strong>,<strong>JQUERY</strong> ainsi que des frameworks modernes comme 
-     <strong>React-Native,</strong> <strong>Laravel,</strong><strong>CodeIgniter,</strong>. ce qui me permet de concevoir 
+<p>Je maîtrise la technologie du developpement mobile tel que <strong>React-Native</strong> et les technologies fondamentales du <strong>Back-End</strong> telles que 
+     <strong>PHP</strong> et <strong>JavaScript</strong>, ainsi que des frameworks modernes comme 
+     <strong>Laravel,</strong><strong>CodeIgniter,</strong><strong>JQUERY</strong>. ce qui me permet de concevoir 
      des applications dynamiques et performantes.  
      Côté bases de données, je travaille aussi bien avec des solutions relationnelles comme 
      <strong>MySQL</strong> qu’avec des systèmes NoSQL comme <strong>MongoDB</strong>.  
@@ -389,5 +394,42 @@
   color: #328cf3;
   cursor: default;
 }
-
 </style>
+
+<script>
+  $(document).ready(function() {
+  $('form').on('submit', function(e) {
+    e.preventDefault(); // empêche le formulaire de recharger la page
+
+    var $form = $(this);
+
+    // Envoi via AJAX vers Formspree
+    $.ajax({
+      url: $form.attr('action'),
+      method: $form.attr('method'),
+      data: $form.serialize(),
+      dataType: "json",
+      success: function() {
+        // Affiche SweetAlert2
+        Swal.fire({
+          icon: 'success',
+          title: 'Message envoyé !',
+          text: 'Merci pour votre message, je vous répondrai rapidement.',
+          confirmButtonColor: '#007bff'
+        });
+        // Réinitialise le formulaire
+        $form[0].reset();
+      },
+      error: function() {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oups...',
+          text: 'Une erreur est survenue, veuillez réessayer.',
+          confirmButtonColor: '#007bff'
+        });
+      }
+    });
+  });
+});
+
+</script>
